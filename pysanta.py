@@ -2,7 +2,8 @@ import numpy as np
 import pandas as pd
 import smtplib
 import ssl
-from email.mime.text import MIMEMultipart, MIMEText
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from argparse import ArgumentParser
 
 def defaulttext(name, giftee, hint):
