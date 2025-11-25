@@ -5,6 +5,7 @@ A Python module for organising secret Santa gift exchanges. No more dubious webs
 Based off a code written by Leo Mullholland.
 
 ![A Ball Python wearing a Santa hat](PySanta.png)
+
 Image credit: [Susan Frontera]((https://ru.pinterest.com/pin/811210951663760657/))
 
 ## Quickstart
