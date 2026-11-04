@@ -81,8 +81,8 @@ class Santas:
         """        
         nomatch = False
         iters = 0
+        self.assigned = self.ids.copy()
         while (nomatch == False) and (iters<=maxiters):
-            self.assigned = self.ids.copy()
             generator.shuffle(self.assigned)
             iters += 1
             if np.count_nonzero(self.ids==self.assigned) > 0:
