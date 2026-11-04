@@ -73,7 +73,7 @@ class Santas:
         """Creates index array based off names
         """        
         self.ids = np.arange(len(self.names))
-    def assignpairs(self, generator=np.random.default_rng, maxiters=1000):
+    def assignpairs(self, generator=np.random.default_rng(), maxiters=1000):
         """Reshuffles index array, ensuring no element remains in the same place.
 
         Args:
