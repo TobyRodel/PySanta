@@ -98,7 +98,7 @@ class Santas:
         Returns:
             pandas.DataFrame: Dataframe object containing spoiler information
         """
-        assigned_names = self.names[self.assigned]  
+        assigned_names = self.names[self.assigned]
         spoilers = pd.DataFrame({'Name':self.names, 'Assigned':assigned_names})
         spoilers.to_csv(path, index=None)
         return spoilers
