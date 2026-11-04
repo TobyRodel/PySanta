@@ -13,7 +13,7 @@ args = parser.parse_args()
 gen = np.random.default_rng()
 
 df = pd.read_csv(args.inputfile)
-santas = Santas(names=df['name'], emails=df['email'], hints=df['hint'], account=args.username, password=args.password)
+santas = Santas(names=df['name'].to_numpy(), emails=df['email'].to_numpy(), hints=df['hint'].to_numpy(), account=args.username, password=args.password)
 santas.createidx()
 santas.assignpairs()
 santas.createspoilerdf(path=args.spoilerfile)
