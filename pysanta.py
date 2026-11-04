@@ -79,14 +79,16 @@ class Santas:
         Args:
             generator (numpy.random.Generator): numpy rng generator class
         """        
-        nomatch = False
-        iters = 0
+        if len(self.ids) < 2:
+            raise ValueError('At least two participants are required to assign pairs.')
+
         self.assigned = self.ids.copy()
-        while (nomatch == False) and (iters<=maxiters):
+        for _ in range(maxiters):
             generator.shuffle(self.assigned)
-            iters += 1
-            if np.count_nonzero(self.ids==self.assigned) > 0:
-                nomatch == True
+            if np.count_nonzero(self.ids == self.assigned) == 0:
+                return
+
+        raise RuntimeError(f'Could not create an assignment without self-matches in {maxiters} attempts.')
     def createspoilerdf(self, path='spoilers.csv'):
         """Creates spoiler table of assignees
 
