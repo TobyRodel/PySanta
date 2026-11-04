@@ -82,11 +82,11 @@ class Santas:
         nomatch = False
         iters = 0
         while (nomatch == False) and (iters<=maxiters):
-            assigned = generator.shuffle(self.ids)
+            self.assigned = self.ids.copy()
+            generator.shuffle(self.assigned)
             iters += 1
-            if np.count_nonzero(self.ids==assigned) > 0:
+            if np.count_nonzero(self.ids==self.assigned) > 0:
                 nomatch == True
-        self.assigned = assigned
     def createspoilerdf(self, path='spoilers.csv'):
         """Creates spoiler table of assignees
 
