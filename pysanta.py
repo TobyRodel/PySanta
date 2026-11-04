@@ -97,8 +97,9 @@ class Santas:
 
         Returns:
             pandas.DataFrame: Dataframe object containing spoiler information
-        """        
-        spoilers = pd.DataFrame({'Name':self.names, 'Assigned':self.names[self.assigned]})
+        """
+        assigned_names = self.names[self.assigned]  
+        spoilers = pd.DataFrame({'Name':self.names, 'Assigned':assigned_names})
         spoilers.to_csv(path, index=None)
         return spoilers
     def sendemails(self, subject='Secret Santa', bodytext=defaulttext):
