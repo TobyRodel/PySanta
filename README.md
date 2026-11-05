@@ -17,5 +17,5 @@ To run the code, you'll first need to create a comma seperated variable `.csv` f
 Then simply run the script with the path to the file, e.g:
 
 ```text
-python pysanta.py -f /PATH/TO/PARTICIPANTS.csv
+python pysanta.py -f /PATH/TO/PARTICIPANTS.csv -u your_dummy_address@gmail.com -p YourAppPassword
 ```
